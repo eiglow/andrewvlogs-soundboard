@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		
+		<meta charset="utf-8">
+		<title>ANDREWVLOGS SOUNDOARD</title>
+		<style>
+			
+			body {
+				margin: 0;
+				background: linear-gradient(#000, #f00);
+				height: 100vh;
+				overflow: hidden;
+				color: #fff;
+				font-family: sans-serif;
+			}
+			
+			#heading {
+				text-align: center;
+			}
+			h1 {
+				font-size: 4.5em;
+				letter-spacing: 20px;
+				margin: 0;
+				padding-top: 50px;
+			}
+			h2 {
+				font-family: "Comic Sans MS";
+				margin: 0;
+				display: inline-block;
+				letter-spacing: 1px;
+				color: #0ff;
+				transform: rotate(-20deg);
+				position: relative;
+				left: 150px;
+				padding-bottom: 75px;
+			}
+			
+			#board {
+				margin: 0 auto;
+				text-align: center;
+				width: 75%;
+				border-left: 2px solid #fff;
+				border-right: 2px solid #fff;
+				padding: 5%;
+			font-size: 0; /* fixes weird gaps between buttons */
+			}
+			#board > div {
+				font-size: 24px;
+				font-family: "Comic Sans MS";
+				letter-spacing: 1px;
+				padding: 15px;
+				background-color: #000;
+				display: inline-block;
+				border: 2px solid #fff;
+				cursor: pointer;
+				margin: 10px;
+			}
+			#board > div:hover {
+				background-color: #fff;
+				color: #000;
+			}
+			
+		</style>
+		
+	</head>
+	
+	<body>
+		
+		<div id="heading">
+			<h1>ANDREW<br>VLOGS</h1>
+			<h2>soundboard</h2>
+		</div>
+		<div id="board"></div>
+		
+		<script type="text/javascript" language="Javascript">
+			
+			var sounds = {
+				"SHIT NIGGA" : "http://www.filehosting.org/file/details/701024/shitnigga.mp3"
+			};
+			var soundsArray = Object.keys(sounds);
+			var soundsLength = soundsArray.length;
+
+			function init() {
+				var elems = {};
+				elems.board = document.getElementById("board");
+				var el;
+				for (var i = 0; i < soundsLength; i++) {
+					el = document.createElement("div");
+					el.onclick = buttonClick;
+					el.innerHTML = soundsArray[i];
+					elems.board.appendChild(el);
+				}
+			}
+
+			function buttonClick() {
+				var a = new Audio(sounds[this.innerHTML]);
+				a.play();
+			}
+
+			window.onload = init;
+			
+		</script>
+		
+	</body>
+	
+</html>
