@@ -62,6 +62,15 @@
 				background-color: #fff;
 				color: #000;
 			}
+			.noselect {
+			  -webkit-touch-callout: none; /* iOS Safari */
+				-webkit-user-select: none; /* Safari */
+				 -khtml-user-select: none; /* Konqueror HTML */
+				   -moz-user-select: none; /* Firefox */
+					-ms-user-select: none; /* Internet Explorer/Edge */
+						user-select: none; /* Non-prefixed version, currently
+											  supported by Chrome and Opera */
+			}
 			
 		</style>
 		
@@ -73,7 +82,7 @@
 			<h1>ANDREW<br>VLOGS</h1>
 			<h2>soundboard</h2>
 		</div>
-		<div id="board"></div>
+		<div id="board" class="noselect"></div>
 		
 		<div id="noscript">Javascript is required to use this site. Please make sure you have it enabled.</div>
 		
