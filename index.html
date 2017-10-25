@@ -44,7 +44,8 @@
 				border-left: 2px solid #fff;
 				border-right: 2px solid #fff;
 				padding: 5%;
-			font-size: 0; /* fixes weird gaps between buttons */
+				font-size: 0; /* fixes weird gaps between buttons */
+				overflow-y: auto;
 			}
 			#board > div {
 				font-size: 24px;
@@ -74,10 +75,16 @@
 		</div>
 		<div id="board"></div>
 		
+		<div id="noscript">Javascript is required to use this site. Please make sure you have it enabled.</div>
+		
 		<script type="text/javascript" language="Javascript">
 			
+			var directory = "sounds/";
+			
+			document.getElementById("noscript").innerHTML = "";
+			
 			var sounds = {
-				"SHIT NIGGA" : "http://www.filehosting.org/file/details/701024/shitnigga.mp3"
+				"SHIT NIGGA" : "shitnigga.mp3"
 			};
 			var soundsArray = Object.keys(sounds);
 			var soundsLength = soundsArray.length;
@@ -95,7 +102,7 @@
 			}
 
 			function buttonClick() {
-				var a = new Audio(sounds[this.innerHTML]);
+				var a = new Audio(directory + sounds[this.innerHTML]);
 				a.play();
 			}
 
