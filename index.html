@@ -9,7 +9,14 @@
 			
 			body {
 				margin: 0;
-				background: linear-gradient(#000, #f00);
+				background: #ff1919; /* Old browsers */
+				background: -moz-linear-gradient(top, #ff1919 0%, #000000 100%); /* FF3.6-15 */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff1919), color-stop(100%,#000000)); /* Chrome4-9,Safari4-5 */
+				background: -webkit-linear-gradient(top, #ff1919 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+				background: -o-linear-gradient(top, #ff1919 0%,#000000 100%); /* Opera 11.10-11.50 */
+				background: -ms-linear-gradient(top, #ff1919 0%,#000000 100%); /* IE10 preview */
+				background: linear-gradient(to bottom, #ff1919 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1919', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 				height: 100vh;
 				overflow: hidden;
 				color: #fff;
